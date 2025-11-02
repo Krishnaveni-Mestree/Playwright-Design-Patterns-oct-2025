@@ -29,4 +29,7 @@ test('Should log in with test data', async ({page, testData})=>{
 
     const signInBtn=page.getByRole('button',{name:'sign in'})
     await signInBtn.click()
+
+    const url=page.url();
+    expect(url).toContain(testData.password);
 });
